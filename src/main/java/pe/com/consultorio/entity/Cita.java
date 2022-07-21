@@ -1,8 +1,8 @@
 package pe.com.consultorio.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.io.Serializable;
 import java.sql.Time;
-import java.time.LocalDate;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,6 +16,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Builder
 @NoArgsConstructor
@@ -31,9 +32,9 @@ public class Cita implements Serializable {
     @Id
     @Column(name = "id_cita")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private long codigo;  
+    private long codigo;
     @Column(name = "fecha_cita")   
-    private LocalDate fecha;
+    private Date fecha;
     @Column(name = "hora_cita")
     private Time hora;
     @Column(name = "descripcion_cita")
