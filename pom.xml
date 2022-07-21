@@ -14,7 +14,7 @@
 	<name>ConsultorioRest</name>
 	<description>Api Rest Spring</description>
 	<properties>
-		<java.version>11</java.version>
+
 	</properties>
 	<dependencies>
 		<dependency>
