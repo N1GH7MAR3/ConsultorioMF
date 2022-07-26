@@ -46,6 +46,10 @@ public class UsuarioController {
     public Optional<Usuario> findById(@PathVariable long id){
         return usuarioService.findById(id);
     }
+    @GetMapping("/user/{usuario}")
+    public Optional<Usuario> findByUsuario(@PathVariable String usuario){
+        return usuarioService.findByUsuario(usuario);
+    }
     @PostMapping
     public Usuario add(@RequestBody Usuario u){
         try {

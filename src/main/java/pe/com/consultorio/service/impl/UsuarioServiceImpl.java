@@ -45,6 +45,11 @@ public class UsuarioServiceImpl implements UsuarioService{
     public Optional<Usuario> findById(Long id) {
         return usuarioRepository.findById(id);
     }
+    
+    @Override
+    public Optional<Usuario> findByUsuario(String usuario) {
+        return usuarioRepository.findByUsuario(usuario);
+    }
 
     @Override
     public Usuario add(Usuario u) {

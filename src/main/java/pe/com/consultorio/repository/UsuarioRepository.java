@@ -2,6 +2,7 @@
 package pe.com.consultorio.repository;
 
 import java.util.List;
+import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -19,4 +20,7 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
     
     @Query(value="select * from Usuario u where u.estado_usuario='0'",nativeQuery = true)
     List<Usuario> findAllInactive();
+    
+    @Query(value="select * from Usuario u where upper(u.usuario) like upper(:usuario) and u.estado_usuario='1'",nativeQuery = true)
+    Optional<Usuario> findByUsuario(@Param("usuario") String usuario);
 }

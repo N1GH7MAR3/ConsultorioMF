@@ -17,6 +17,8 @@ public interface UsuarioService {
     List<Usuario> findbySurname(String apellido);
 
     Optional<Usuario> findById(Long id);
+    
+    Optional<Usuario> findByUsuario(String usuario);
 
     Usuario add(Usuario u);
 
