@@ -34,5 +34,6 @@ public class HistorialClinico implements Serializable{
     @OneToOne
     @JoinColumn(name = "id_paciente", nullable = false)
     private Paciente paciente;
-      
+    @Column(name="descripcion_historial")
+    private String descripcion;
 }

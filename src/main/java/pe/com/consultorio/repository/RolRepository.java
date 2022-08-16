@@ -11,7 +11,7 @@ public interface RolRepository extends JpaRepository<Rol, Long>{
     @Query(value="select * from Rol r where r.estado_rol='1'",nativeQuery = true)
     List<Rol> findAllCustom();
     
-    @Query(value="select * from Rol r where upper(r.nombre_rol) like upper(:nombre) and r.estado_rol='1'",nativeQuery = true)
+    @Query(value="select * from Rol r where upper(r.nombre_rol)like upper(CONCAT('%',:nombre,'%')) and r.estado_rol='1'",nativeQuery = true)
     List<Rol> findByName(@Param("nombre") String nombre);
     
     @Query(value="select * from Rol r where r.estado_rol='0'",nativeQuery = true)
