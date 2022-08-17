@@ -14,7 +14,7 @@ public interface CitaService {
     
     List<Cita> findAllInactive();
 
-    List<Cita> findbyDate(Date fecha);
+    Optional<Cita> findbyDate(Date fecha);
     
     Optional<Cita> findById(Long id);
 

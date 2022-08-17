@@ -44,7 +44,7 @@ public class CitaController {
     }
     
     @GetMapping("/date/{fecha}")
-    public List<Cita> findbyDate(@PathVariable @DateTimeFormat(pattern = "yyyy-MM-dd")Date fecha){
+    public Optional<Cita> findbyDate(@PathVariable @DateTimeFormat(pattern = "yyyy-MM-dd")Date fecha){
         return citaService.findbyDate(fecha);
     }
     @GetMapping("/{id}")

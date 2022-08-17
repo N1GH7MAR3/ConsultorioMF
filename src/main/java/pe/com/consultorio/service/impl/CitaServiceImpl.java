@@ -33,7 +33,7 @@ public class CitaServiceImpl implements CitaService{
     }
 
     @Override
-    public List<Cita> findbyDate(Date fecha) {
+    public Optional<Cita> findbyDate(Date fecha) {
         return citaRepository.findByDate(fecha);
     }
 
